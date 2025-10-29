@@ -12,7 +12,7 @@ Tech Stack
 To Run Locally
 ------
 
-```zsh
+```bash
 git clone https://github.com/bishwash-007/source-code-summarizer
 
 cd source-code-summarizer
@@ -29,4 +29,20 @@ you can use other inference providers like openAI or Hugging face refer to their
 
 ```.env
 GOOGLE_API_KEY=
+```
+
+Test Your Endpoints
+---
+```bash
+# Build index
+curl -X POST http://127.0.0.1:5000/build
+
+# Summarize
+curl http://127.0.0.1:5000/summarize
+
+# Query
+curl -X POST http://127.0.0.1:5000/query \
+  -H "Content-Type: application/json" \
+  -d '{"query":"What does this mean ...{your_question}"}'
+
 ```

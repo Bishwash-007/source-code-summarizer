@@ -7,7 +7,7 @@ def clone_or_update_repo():
         print("Cloning repo for the first time...")
         Repo.clone_from(REPO_URL, REPO_PATH)
     else:
-        print("🔄 Updating existing repo...")
+        print("Updating existing repo...")
         repo = Repo(REPO_PATH)
         origin = repo.remotes.origin
         origin.pull()
